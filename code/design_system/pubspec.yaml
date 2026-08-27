@@ -1,0 +1,28 @@
+name: design_system
+description: >-
+  The laboratory in which a design language is discovered. A Jaspr component
+  library with a deliberately generic name, because naming it is the outcome of
+  the work rather than its premise.
+
+# This package is never released. The system it exists to find will be born as a
+# new package, named, and public from its first version — so `design_system` can
+# be dismantled without ceremony, which is what a laboratory needs. `publish_to`
+# makes that mechanical rather than remembered: `dart pub publish` refuses, and
+# no name can be burned by accident.
+#
+# There is no `version` for the same reason. A version number is a promise to
+# someone downstream, and there is nobody downstream.
+publish_to: none
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  jaspr: ^0.23.4
+
+dev_dependencies:
+  build_runner: ^2.7.1
+  jaspr_builder: ^0.23.4
+  jaspr_test: ^0.23.4
+  lints: ^6.1.0
+  test: ^1.31.0
