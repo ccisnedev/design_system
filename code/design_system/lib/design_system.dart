@@ -1,12 +1,12 @@
 /// The laboratory in which a design language is discovered.
 ///
-/// This library is empty, and that is the current state of the work rather than
-/// an oversight. The first components will arrive from a real site — skillwire's
-/// — because a component library written before anything uses it encodes guesses
-/// about what will be needed, and this package exists to record what *was*
-/// needed.
-///
-/// See `docs/adr/0002-the-design-language-is-not-named-yet.md` for why the
-/// package has a generic name, and `docs/journal.md` for what has been observed
-/// so far.
+/// Components arrive here only when a real page has asked for them. See
+/// `docs/adr/0002-the-design-language-is-not-named-yet.md` for why the package
+/// has a generic name, and `docs/journal.md` for what each component was
+/// extracted to solve.
 library;
+
+export 'src/base.dart' show baseStyles, role, typefaces;
+export 'src/layout.dart' show Band, Listing, Page;
+export 'src/terminal.dart' show Blank, Line, Printed, Terminal, Typed;
+export 'src/tokens.dart';

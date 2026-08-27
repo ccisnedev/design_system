@@ -13,9 +13,13 @@ There is nothing to preserve, nothing to port and no existing look to be
 influenced by. macss and inquiry already have sites, and rebuilding one of those
 first would smuggle its current decisions in as defaults.
 
-- [ ] Jaspr app in `skillwire/code/site`, depending on this package by path
-- [ ] Components extracted here as the page needs them — never before
-- [ ] Journal entry each time a component is extracted, saying what asked for it
+- [x] Jaspr app in `skillwire/code/site`, depending on this package by path
+- [x] Components extracted here as the page needs them — never before
+      (`Page`, `Band`, `Terminal`, `Listing`)
+- [x] Journal entry each time a component is extracted, saying what asked for it
+- [ ] The site deployed at `skillwire.ccisne.dev` — blocked while this
+      repository is private, since a `path:` dependency has no sibling checkout
+      in CI
 
 ## Phase 2 — The second subject
 
