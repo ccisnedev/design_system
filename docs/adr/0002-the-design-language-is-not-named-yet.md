@@ -101,5 +101,21 @@ they do.
 The resolution when it bites is to make this repository public, not to add
 deploy keys — but it does not bite yet, since skillwire has no site.
 
+> **2026-08-31 — it bit, and the stated resolution was taken.** skillwire's site
+> was built and needed deploying. `GITHUB_TOKEN` is scoped to the repository
+> running the job, so reading this one meant a fine-grained PAT. This repository
+> was made **public** instead.
+>
+> Nothing in the argument above required privacy — the case is entirely about
+> not naming before the work is done, and a public repository names nothing.
+> What privacy bought was that half-finished work stayed unseen; what it cost
+> was a credential that expires on a date nobody writes down, and a deploy that
+> would then fail silently. The first is a preference and the second is a defect
+> waiting, so the trade was not close.
+>
+> `publish_to: none` is untouched and the package is still never released. A
+> public repository and a published package are different things, and only the
+> second would fix a name.
+
 **Nothing here is precious.** A file in this repository may be deleted without a
 migration, because nothing depends on it that cannot be rebuilt.

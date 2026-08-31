@@ -22,5 +22,6 @@ dependencies:
     path: ../../../design_system/code/design_system
 ```
 
-That requires the two repositories to be siblings on disk, and it is why a
-consumer's site cannot be built in CI while this repository is private.
+That requires the two repositories to be siblings on disk — locally and on a
+runner alike. `skillwire`'s Pages workflow clones both under a common parent so
+the relative path resolves in either place.

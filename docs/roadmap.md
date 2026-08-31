@@ -17,9 +17,10 @@ first would smuggle its current decisions in as defaults.
 - [x] Components extracted here as the page needs them — never before
       (`Page`, `Band`, `Terminal`, `Listing`)
 - [x] Journal entry each time a component is extracted, saying what asked for it
-- [ ] The site deployed at `skillwire.ccisne.dev` — blocked while this
-      repository is private, since a `path:` dependency has no sibling checkout
-      in CI
+- [x] The site deployed at `skillwire.ccisne.dev`. The `path:` dependency has
+      no sibling checkout on a runner, so the workflow clones both repositories
+      under a common parent — and this repository was made public so that clone
+      needs no credential.
 
 ## Phase 2 — The second subject
 
@@ -47,7 +48,8 @@ The named package, public from its first version.
 - [ ] New repository, or this one renamed
 - [ ] `design_system` deleted
 - [ ] macss, inquiry and skillwire sites all on the published package
-- [ ] Consumer sites build in CI again
+- [ ] Consumer sites depend on a version rather than a path, so a change here
+      redeploys them without a manual trigger
 
 ## Not in scope
 

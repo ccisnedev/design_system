@@ -53,9 +53,14 @@ dependencies:
 Two consequences follow, and both are accepted for now:
 
 - The repositories must be siblings on disk.
-- A consumer's site cannot be built in CI while this repository is private,
-  because the runner has no sibling checkout. Sites are built locally until the
-  system is named, published and public.
+- A consumer's site must clone this repository too. skillwire's Pages workflow
+  checks both out as siblings under a common parent, because `actions/checkout`
+  cannot write outside the workspace and the relative path has to resolve on a
+  runner exactly as it does on a desk. This repository was made public on
+  2026-08-31 so that step needs no credential — see `docs/adr/0002`.
+- A change here does not touch a consumer's repository and so triggers no
+  redeploy of its site. Until this package is published and consumers depend on
+  a version, that is a manual `workflow_dispatch`.
 
 ## Testing
 
