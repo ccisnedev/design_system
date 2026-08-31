@@ -12,6 +12,36 @@ Newest first. Every entry dated.
 
 ---
 
+## 2026-08-31 — The transcript/listing split paid for itself
+
+skillwire's site gained an install section, and the question was how to render
+`irm https://…/install.ps1 | iex`.
+
+The reflex was to reach for `Terminal` and add a parameter for the prompt mark,
+because PowerShell does not show `$`. That would have been a component growing an
+option to accommodate a case it was never for.
+
+`Listing` already answered it. A transcript says *this happened* and carries a
+prompt; a listing says *write this* and carries none. An install command is the
+second, and the prompt problem stopped existing rather than being configured
+away.
+
+*The rule this suggests, not yet an ADR:* when a component wants a new option,
+check first whether a different component is the one being asked for. Two
+components that differ by meaning beat one that differs by flag — and the split
+here was made on semantic grounds four days before anything needed it, which is
+the only reason it was available.
+
+**A second thing, about drift.** macss keeps its installers in two places —
+`code/cli/scripts/` and `code/site/` — and they have diverged. The served
+`install.ps1` writes an alias that invokes a bare `macss`, resolving through
+PATH; the repository copy uses `%~dp0macss.exe` and carries the comment
+explaining why. The fix never reached the copy people actually run.
+
+skillwire's live in `code/site/web/` and nowhere else. Worth stating plainly:
+*the drifted copy is always the one in production*, because production is the
+copy nobody edits.
+
 ## 2026-08-27 — First pilot: skillwire's site
 
 Four components were extracted, each because the page asked and not before:
