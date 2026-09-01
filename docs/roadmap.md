@@ -24,14 +24,31 @@ first would smuggle its current decisions in as defaults.
 
 ## Phase 2 — The second subject
 
-Rebuild inquiry's site from the same package.
+Rebuild a second site from the same package. **macss, not inquiry** — the order
+in the first draft of this file was written before either was measured. macss is
+two pages and 347 lines; inquiry is six and 1189, including a long-form article
+that would force a prose-typography system at the same time as generalising
+landing components. Two pressures at once, and no way to tell which produced
+what.
 
-A design language is only demonstrated by the second use. The first site
-produces components; the second reveals which of them were general and which
-were that page in disguise.
+- [x] macss rebuilt on the package
+- [x] Every component that survived unchanged, listed — `Page`, `Band`,
+      `Terminal`
+- [x] Every component that needed a special case, listed — `Listing.caption`
+      became optional, because a directory tree is not a file and has nothing
+      to name
+- [x] Extracted on evidence: `Masthead` (two pages, same three things),
+      `Rows` (three hand-built copies on one page), `Diagram`
+- [ ] inquiry rebuilt — third, with the article as its own problem
 
-- [ ] Every component that needed a special case for site two, listed
-- [ ] Every component that survived unchanged, listed
+### Two questions this phase opened and did not close
+
+- **Does this system ship JavaScript?** Narrowed by the rebuild: OS tabs were
+  never needed, so the question is whether one copy button is worth the first
+  `<script>` tag on a page whose argument is restraint.
+- **Are diagrams quotations or voice?** An SVG in an `img` cannot inherit the
+  palette. `Diagram` plates it — treating it as a quotation. Inlining and
+  re-authoring would make it voice. See `docs/journal.md`.
 
 ## Phase 3 — The argument
 

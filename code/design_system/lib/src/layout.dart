@@ -75,15 +75,22 @@ class Band extends StatelessComponent {
 /// claims. A transcript says *this happened*; a listing says *write this*. The
 /// same box for both would blur the two, and one of them is a promise the
 /// reader will test.
+///
+/// [caption] is optional, and that is the second site's doing. It was required
+/// while the only listings were files, where the caption is the filename. macss
+/// listed directory trees — which are not a file and have nothing to name — and
+/// a caption invented for them would have been decoration. [Terminal] keeps its
+/// caption required, because there the caption is provenance and a transcript
+/// without it asks to be taken on trust.
 class Listing extends StatelessComponent {
-  const Listing({required this.caption, required this.source, super.key});
+  const Listing({required this.source, this.caption, super.key});
 
-  final String caption;
+  final String? caption;
   final String source;
 
   @override
   Component build(BuildContext context) => figure(classes: 'listing', [
-    figcaption([.text(caption)]),
+    if (caption case final c?) figcaption([.text(c)]),
     pre([code([.text(source)])]),
   ]);
 
