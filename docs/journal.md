@@ -12,6 +12,91 @@ Newest first. Every entry dated.
 
 ---
 
+## 2026-08-31 — The second site, which is the actual experiment
+
+macss rebuilt on this package. The roadmap said inquiry would be second; it was
+written before measuring. macss is two pages and 347 lines of HTML, inquiry is
+six pages and 1189 including a long-form article — which would have forced a
+prose-typography system at the same time as generalising landing components,
+two pressures at once and no way to tell which produced what. macss is the same
+*kind* of thing as skillwire, which is what makes it a clean second reading.
+
+### What survived unchanged
+
+`Page`, `Band`, `Terminal`. Three of the four came through with no argument at
+all. `Band`'s `6.2rem` cut and `Page`'s single measure held across a page with
+five sections instead of six and a completely different subject.
+
+### What needed a special case
+
+**`Listing.caption` became optional.** It was required while every listing was a
+file, where the caption is the filename. macss lists *directory trees* — not a
+file, nothing to name — and a caption invented for them would have been
+decoration. `Terminal` keeps its caption required, and the asymmetry is the
+point: there the caption is provenance, and a transcript without it asks to be
+taken on trust.
+
+### What was extracted, and on what evidence
+
+**`Masthead`** — skillwire's was bespoke, macss wanted the same three things in
+the same order. Two pages wanting a shape is the threshold.
+
+**`Rows`** — macss had built this *three times on one page* out of `div`s: seven
+architectural layers, eight CLI routes, five endpoints. Three hand-built copies
+of one shape is the clearest signal a component is missing.
+
+It renders a `dl`, which is what it always was. Nothing about a `div` says *this
+word is defined by that sentence*; to a screen reader the original was a stack
+of unrelated text. Both render identically, so a visual reading would never have
+found it — this is the semantics value doing work that looking cannot do.
+
+The term column is `max-content`, so it is as wide as the longest term and no
+wider. A fixed width would either clip a command or leave a gap after a one-word
+layer name, and those are the same mistake: a measurement guessed rather than
+derived.
+
+### The finding that matters most
+
+**An SVG loaded through `img` is a sealed document.** It cannot read the page's
+custom properties, so it cannot inherit this palette the way every other element
+does. macss's architecture diagram is a mermaid export authored for the old dark
+navy site — pale lavender and near-black — and on this page it was a bright slab
+in light mode and illegible in dark.
+
+`Diagram` gives it a **fixed light ground in both schemes**, the way a printed
+figure keeps its paper when the book around it changes. That is a decision, not
+a fix, and it is worth stating what was decided:
+
+> A design system that plates its diagrams has decided they are **quotations**.
+> One that inlines and re-authors them has decided they are part of its own
+> **voice**. Those are different systems.
+
+The alternative is real: inline the SVG so its fills can be driven by variables,
+and re-author every diagram in this palette. It costs 40 KB on the page and a
+redraw of every figure. **This is the second open question for the language, and
+it is not settled.**
+
+### The first open question, still open
+
+Both old sites shipped an identical 44-line `main.js`: a copy-to-clipboard
+button and OS tabs. Neither exists on the rebuilt macss, and the page contains
+no `<script>` tag at all — `jaspr_router` in static mode resolves its routes
+during the build, so even the router costs nothing.
+
+What was given up: **the copy button**, which genuinely needs JavaScript. What
+was not given up: **the OS tabs**, which were never needed — skillwire shows both
+commands stacked and reads better for it.
+
+So the question is narrower than it looked. It is not *does this system have
+client components*; it is **is one copy button worth the first `<script>` tag on
+a page whose argument is restraint**. Deliberately not answered here.
+
+### Candidates recorded, not extracted
+
+macss's ecosystem rows (a name, a description, a set of registry links) look like
+`Rows` and are not — folding the links into a definition would make them read as
+part of the sentence. One page wanting a shape is a page. Left as site markup.
+
 ## 2026-08-31 — The transcript/listing split paid for itself
 
 skillwire's site gained an install section, and the question was how to render
