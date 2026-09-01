@@ -1,0 +1,50 @@
+# Analysis only, and deliberately.
+#
+# There are no tests here yet, and adding an empty suite to have something to
+# run would be ceremony. What that suite should assert is a real question — the
+# components' point is how they look, and a screenshot cannot be asserted on —
+# and it is being worked out in `docs/journal.md` before it is worked out in a
+# workflow. See issue #1.
+#
+# What this does close is the gap that already bites: a break here does not
+# trigger any consumer's CI, because a consumer's CI fires on changes to its own
+# tree. Broken, this package would sit green until somebody opened an unrelated
+# pull request somewhere else and got a red mark about a file their change never
+# touched — the signal arriving at an arbitrary later time, attributed to the
+# wrong work.
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'code/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    paths:
+      - 'code/**'
+      - '.github/workflows/ci.yml'
+
+jobs:
+  analyze:
+    name: analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: dart pub get
+        working-directory: code/design_system
+        run: dart pub get
+
+      # `--fatal-infos` is the whole point rather than strictness for its own
+      # sake: jaspr_lints reports its rules as infos, so anything less ignores
+      # `styles_ordering` entirely — the rule this package has already tripped
+      # four times in its first week.
+      - name: dart analyze
+        working-directory: code/design_system
+        run: dart analyze --fatal-infos
