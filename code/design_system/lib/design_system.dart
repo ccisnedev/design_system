@@ -7,6 +7,7 @@
 library;
 
 export 'src/base.dart' show baseStyles, role, typefaces;
+export 'src/command.dart' show Command;
 export 'src/diagram.dart' show Diagram;
 export 'src/layout.dart' show Band, Listing, Page;
 export 'src/masthead.dart' show Masthead;

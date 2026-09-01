@@ -12,6 +12,99 @@ Newest first. Every entry dated.
 
 ---
 
+## 2026-09-01 — Five decisions, taken with the author
+
+The two questions this laboratory had left open are answered, and three more
+were answered on the way. These are the author's, taken in conversation; the
+reasoning is recorded so a later reader can see what they rest on.
+
+### The register
+
+> Afirmando. Contraste solo cuando hace falta. Evidencia solo si se amerita.
+> Preciso.
+
+Stated by the author when shown three registers and rejecting all three. It
+corrects the prose already published, which defines by contrast — *not X, but Y*
+— and that turn is the writer's tic rather than the author's voice.
+
+An audit separated them. Of eleven negations on skillwire's page, five are the
+author's own five rules from the PRD, where the prohibition is the content.
+Four were introduced by the writer, and the affirming form of each is shorter:
+
+| introduced | affirming |
+|---|---|
+| "not by choosing on the reader's behalf" | "A missing one is named." |
+| "the description is not a flag you may forget" | "Every command takes `--plan` or `--apply`." |
+| "ships your skills, not somebody else's" | "ships your skills." |
+| heading: "It refuses to guess" | "Every parameter is required" |
+
+*The rule:* affirm. Reach for contrast when the reader would otherwise assume
+the opposite, and not before.
+
+### The install command goes first
+
+The author's ranking of what a page is for: **install**, then return-to-reference,
+then be remembered, then be understood. The worst failure it could commit:
+**pretentious**, then difficult.
+
+Measured against the pages as published:
+
+    skillwire   the command at  5% of the page, after  49 words
+    macss       the command at 67% of the page, after 589 words
+
+Two sites sharing a design system and not sharing this. macss's order was
+inherited from its old site and carried over without asking.
+
+*The rule:* the command is above the argument. Whoever came to install
+installs; whoever came to read scrolls, and has lost nothing.
+
+### What needs a caveat is not shown
+
+Offered three ways to place an honest caveat — in the hero, beside the thing it
+qualifies, or not at all — the author chose the third: a page shows what is
+finished. *"There is no macOS build yet"* leaves both pages. When the build
+exists it gets a line.
+
+### Diagrams are quotations
+
+Settled as `Diagram` had provisionally decided: the drawing keeps its own
+ground. The alternative — inlining and re-authoring every figure in this palette
+— was declined at 40 KB a page and a redraw each. inquiry's `fsm.svg` will
+arrive the same way.
+
+### One copy button, in JavaScript
+
+The author's question was sharp: *is hand-written JavaScript here like native
+code in Flutter?*
+
+It is not, and the difference decides it. Native code in Flutter is a
+**capability** escape — the camera exists only in Swift and Kotlin, and there is
+no other door. Dart reaches the clipboard: a `@client` island compiles and runs
+on this toolchain, measured. So this is a **cost** escape.
+
+    Dart island      136 KB of dart2js output
+    inline script       230 bytes
+    the page it sits on  16 KB
+
+136 KB is `dart2js`'s floor rather than this component's weight, so it does not
+shrink. The button's runtime would be eight times its page — form over content
+in the most literal sense, which is the failure the author named first.
+
+The objection that normally settles this in Dart's favour was removed by
+measurement: `script(content:)` ships the script inside the component, so there
+is no second file for a consumer to remember and nothing to drift.
+
+Taken as **reversible first**: if a third interactive component appears, the
+136 KB buys every one after it and migrating changes this file alone. The
+consumers' code does not move either way.
+
+*Recorded as unresolved:* this JavaScript has no types and no test.
+
+### Later
+
+The author on the palette: ink and paper stands. A dark variant and a luminous
+one are worth exploring when there is reason to.
+
 ## 2026-08-31 — The second site, which is the actual experiment
 
 macss rebuilt on this package. The roadmap said inquiry would be second; it was
